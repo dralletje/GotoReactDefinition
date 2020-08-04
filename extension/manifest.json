@@ -1,0 +1,37 @@
+{
+  "name": "React Source Locator",
+  "short_name": "React locate",
+  "description": "Changes fullscreen buttons to go into a popup. Works for every website that uses fullscreen, including Youtube, Vimeo, Netflix",
+  "developer": {
+    "name": "Michiel Dral",
+    "url": "https://dral.eu/"
+  },
+  "version": "9",
+  "manifest_version": 2,
+  "permissions": [
+    "tabs","contextMenus"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": [
+        "http://localhost/*"
+      ],
+      "js": ["Javascript/Content.js"],
+      "all_frames": true
+    }
+  ],
+  "background": {
+    "persistent": false,
+    "scripts": [
+      "Javascript/browser-polyfill.min.js",
+      "Javascript/Background.js"
+    ]
+  },
+  "icons": {
+    "16": "Icons/Icon_16.png",
+    "32": "Icons/Icon_32.png",
+    "64": "Icons/Icon_64.png",
+    "128": "Icons/Icon_128.png"
+  }
+}
